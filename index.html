@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Euna Seo</title>
-  <meta name="description" content="Euna Seo — HR business partner turned AI-transformation builder, studying Information Management at KAIST.">
+  <meta name="description" content="Euna Seo — HR specialist turned AI-transformation builder, studying Information Management at KAIST.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
@@ -17,14 +17,6 @@
       --accent: #ff7a59;
       --accent-soft: #ffe3da;
     }
-    :root[data-theme="dark"] {
-      --bg: #14161a;
-      --text: #e8e8e8;
-      --muted: #8d9199;
-      --line: #262a31;
-      --accent: #ffa07f;
-      --accent-soft: #3a2a24;
-    }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
@@ -34,18 +26,9 @@
       font-family: "Inconsolata", ui-monospace, Menlo, Consolas, monospace;
       font-size: 18px;
       line-height: 1.65;
-      transition: background .3s, color .3s;
+      color-scheme: light;
     }
     #site { max-width: 960px; margin: 0 auto; padding: 0 24px 80px; }
-
-    /* theme toggle */
-    .toggle {
-      position: fixed; top: 20px; right: 24px;
-      background: none; border: 1px solid var(--line); color: var(--text);
-      width: 40px; height: 40px; border-radius: 50%;
-      font-size: 18px; cursor: pointer; transition: border-color .2s, transform .2s;
-    }
-    .toggle:hover { border-color: var(--accent); transform: rotate(20deg); }
 
     /* intro */
     .intro { padding: 18vh 0 10vh; }
@@ -95,6 +78,7 @@
     .project { padding: 0 0 16px; }
     .project:last-child { padding-bottom: 0; }
     .project .job__role { margin-bottom: 0; }
+    .job__desc { margin: 0; }
     .job__top { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
     .job__company { font-weight: 700; }
     .job__time { color: var(--muted); font-size: 16px; }
@@ -130,12 +114,10 @@
   </style>
 </head>
 <body>
-  <button class="toggle" id="toggle" aria-label="Toggle dark mode" title="Toggle dark mode">☾</button>
-
   <div id="site">
     <header class="intro">
       <h1>Hello! <span class="wave">👋</span></h1>
-      <h2>I'm <span class="name">Euna Seo</span>, an HR business partner turned AI-transformation builder, designing how people and AI work together.</h2>
+      <h2>I'm <span class="name">Euna Seo</span>, an HR specialist turned AI-transformation builder, designing how people and AI work together.</h2>
       <div class="contact">
         Find me on →
         <a class="hl" href="https://www.linkedin.com/in/euna-seo-b2839b240" target="_blank" rel="noopener">LinkedIn</a>
@@ -147,7 +129,7 @@
     <section class="section reveal">
       <div class="section__title">Background</div>
       <div class="section__content">
-        <p>I'm currently an HR business partner at <a class="ul" href="https://www.poscointl.com" target="_blank" rel="noopener">POSCO INTERNATIONAL</a> in Seoul, where I work on the HR side of a large-scale AI transformation: redesigning HR touchpoints and building the data foundation behind them.</p>
+        <p>I'm currently an HR specialist at <a class="ul" href="https://www.poscointl.com" target="_blank" rel="noopener">POSCO INTERNATIONAL</a> in Seoul, where I work on the HR side of a large-scale AI transformation: redesigning HR touchpoints and building the data foundation behind them.</p>
         <p>Alongside work, I'm pursuing a Master of Information Management at <a class="ul" href="https://biz.kaist.ac.kr" target="_blank" rel="noopener">KAIST College of Business</a> (expected Feb 2027). I enjoy sitting between people, data, and technology, translating what teams actually need into systems that fit how they work.</p>
       </div>
     </section>
@@ -202,7 +184,7 @@
             <span class="job__company">Ingkko (잉꼬) Couple Compatibility Project</span>
             <span class="job__time">2026</span>
           </div>
-          <div class="job__role">Lower-face couple matching score based on Siamese CNN AI model</div>
+          <div class="job__role">Couple compatibility score from lower-face photos, using a Siamese CNN</div>
         </div>
         <div class="project">
           <div class="job__top">
@@ -222,14 +204,8 @@
             <span class="job__company">POSCO INTERNATIONAL</span>
             <span class="job__time">2020 – Present</span>
           </div>
-          <div class="job__role">HR Business Partner · Seoul</div>
-          <ul>
-            <li><strong>AI transformation:</strong> proposed a company-wide AI adoption plan to executives and lead the HR domain of a 12-month HR AI transformation (self-service portal, HR policy chatbot, talent search agent).</li>
-            <li><strong>Performance &amp; leadership:</strong> redesigned performance frameworks, coached business leaders, and built a high-potential female leadership pipeline.</li>
-            <li><strong>Talent acquisition:</strong> launched the "Ex-ternship" virtual internship, raising the applicant rate by 40%, and cut recruiting lead time by 85% with AI-driven analytics.</li>
-            <li><strong>Talent development:</strong> redesigned the annual training framework using internal learning analytics and employee feedback to align with business priorities; identified Sales employees' pain points and designed targeted training, including role-specific onboarding (sales negotiation) and the "Trade Academy".</li>
-            <li><strong>Culture &amp; Change Management:</strong> originated and led "Reverse Mentoring," designed from pain points found in interviews with junior staff and executives, which became a benchmark case with 4+ external inquiries and 3+ media features; partnered with stakeholders to promote DEI and flexible work culture, driving a 1.7x increase in flexible-work usage through change management.</li>
-          </ul>
+          <div class="job__role">HR Specialist · Seoul</div>
+          <p class="job__desc">Working on AI transformation, performance management, talent acquisition, talent development, and organizational culture.</p>
         </div>
         <div class="job">
           <div class="job__top">
@@ -259,20 +235,6 @@
 
   <script>
     (function () {
-      var root = document.documentElement, btn = document.getElementById('toggle');
-      var saved = null;
-      try { saved = localStorage.getItem('theme'); } catch (e) {}
-      var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
-      function apply() {
-        root.setAttribute('data-theme', dark ? 'dark' : 'light');
-        btn.textContent = dark ? '☀' : '☾';
-      }
-      apply();
-      btn.addEventListener('click', function () {
-        dark = !dark; apply();
-        try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {}
-      });
-
       var els = document.querySelectorAll('.reveal');
       if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
       var io = new IntersectionObserver(function (entries) {
